@@ -21,11 +21,6 @@ class sudokuBoard {
         }
         return e;
     }
-    print() {
-      for (let y = 0; y < 9; y++) {
-          console.log(this.items[y]);
-      }  
-    }
     findResults(x, y) {
         let array1 = this.horizontalValues(y);
         let array2 = this.verticalValues(x);

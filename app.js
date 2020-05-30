@@ -1,5 +1,15 @@
 import { sudokuBoard } from "./sudokuboard.js";
 
+function printBoard(board) {
+    let b = document.querySelector("#board");
+    for (let x = 0; x < 9; x++) {
+        for (let y = 0; y < 9; y++) {
+            b.appendChild(document.createTextNode(board[x][y]))
+        }
+        b.appendChild(document.createElement('br'))
+    }
+}
+
 let board = new sudokuBoard();
 board.items = [
     [ , , ,7, ,3,1, , ],
@@ -28,5 +38,6 @@ while (true)
     });
 }
 
+printBoard(board.items);
+
 console.log('done');
-board.print();

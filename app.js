@@ -35,7 +35,7 @@ while (true)
     e.forEach(p => {
         let r = board.findResults(p.x, p.y);
         if (r.length === 1) {
-            console.log('found solution for (' + p.x + ',' + p.y + ') ' + r[0]);
+            console.log('found solution', p, r[0]);
             board.items[p.x][p.y] = r[0];
         }
     });

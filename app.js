@@ -1,7 +1,7 @@
 import { sudokuBoard } from "./sudokuboard.js";
 
-function printBoard(board) {
-    let b = document.querySelector("#board");
+function printBoard(id, board) {
+    let b = document.querySelector(id);
     for (let x = 0; x < 9; x++) {
         for (let y = 0; y < 9; y++) {
             b.appendChild(document.createTextNode(board[x][y]))
@@ -9,6 +9,8 @@ function printBoard(board) {
         b.appendChild(document.createElement('br'))
     }
 }
+
+console.log('Start');
 
 let board = new sudokuBoard();
 board.items = [
@@ -27,6 +29,7 @@ while (true)
 {
     let e = board.empties();
     if (e.length === 0) {
+        console.log('No empty tiems left');
         break;
     }
     e.forEach(p => {
@@ -38,6 +41,6 @@ while (true)
     });
 }
 
-printBoard(board.items);
+printBoard('#board', board.items);
 
-console.log('done');
+console.log('Done');
